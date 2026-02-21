@@ -1,0 +1,5 @@
+# Priority Living CLI — Core (no external dependencies)
+# For AI features, install extras:
+#   pip install priority-living-cli[ai]
+# Or manually:
+#   pip install torch transformers huggingface_hub
