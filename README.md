@@ -13,6 +13,7 @@
 - 🛡 **Safety Guards** — Blocks dangerous commands automatically
 - 📦 **Offline Resilience** — Queues commands when backend is unreachable
 - 🔄 **Self-Update** — `pl update` checks GitHub for newer versions
+- 🌐 **WebGUI** — Local browser dashboard at `localhost:8420`
 
 ## Quick Start
 
@@ -49,6 +50,9 @@ pl bridge start
 | `pl update` | Check for updates and self-update |
 | `pl config set <key> <val>` | Set config value |
 | `pl config get <key>` | Get config value |
+| `pl gui` | Launch local WebGUI dashboard |
+| `pl gui --port 9000` | Launch on custom port |
+| `pl gui --no-browser` | Launch without opening browser |
 
 ## Agent Workers
 
@@ -84,6 +88,31 @@ pl update
 # First, set your GitHub username (auto-set on first deploy)
 pl config set github_repo_owner YOUR_USERNAME
 ```
+
+## WebGUI Dashboard
+
+Launch a local browser-based control panel that mirrors the cloud Sovereign Command Center:
+
+```bash
+# Install GUI extras
+pip install -e ".[gui]"
+
+# Launch (opens browser automatically)
+pl gui
+
+# Custom port
+pl gui --port 9000
+
+# Don't auto-open browser
+pl gui --no-browser
+```
+
+The GUI runs at `http://localhost:8420` and provides:
+- Real-time task feed with status badges
+- Agent configuration (autonomy mode, local tools)
+- Hardware/GPU monitoring
+- Quick task input
+- Stats dashboard (total/done/pending/latency)
 
 ## AI Features (Optional)
 
