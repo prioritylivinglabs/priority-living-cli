@@ -3,7 +3,7 @@ import json
 
 setup(
     name="priority-living-cli",
-    version="3.1.0",
+    version="3.2.0",
     description="Priority Living CLI — Sovereign AI command & control for your local machine",
     long_description=open("README.md").read(),
     long_description_content_type="text/markdown",
@@ -14,6 +14,7 @@ setup(
     install_requires=[],
     extras_require={
         "ai": ["torch", "transformers", "huggingface_hub"],
+        "gui": ["fastapi", "uvicorn[standard]"],
     },
     entry_points={
         "console_scripts": [
