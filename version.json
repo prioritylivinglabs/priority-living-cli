@@ -1,6 +1,6 @@
 {
-  "version": "3.1.0",
-  "updated_at": "2026-02-21T02:38:35.954Z",
+  "version": "3.2.0",
+  "updated_at": "2026-02-22T00:20:14.375Z",
   "platform": "Priority Living",
   "min_python": "3.7",
   "features": [
@@ -11,6 +11,7 @@
     "config",
     "offline-queue",
     "self-update",
-    "agent-workers"
+    "agent-workers",
+    "gui"
   ]
 }
