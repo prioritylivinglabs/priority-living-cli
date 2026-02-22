@@ -4,7 +4,7 @@ build-backend = "setuptools.backends._legacy:_Backend"
 
 [project]
 name = "priority-living-cli"
-version = "3.1.0"
+version = "3.2.0"
 description = "Priority Living CLI — Sovereign AI command & control for your local machine"
 readme = "README.md"
 license = {text = "MIT"}
@@ -15,6 +15,7 @@ authors = [
 
 [project.optional-dependencies]
 ai = ["torch", "transformers", "huggingface_hub"]
+gui = ["fastapi", "uvicorn[standard]"]
 
 [project.scripts]
 pl = "priority_living.cli:main"
