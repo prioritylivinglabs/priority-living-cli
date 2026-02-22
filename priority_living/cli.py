@@ -69,6 +69,11 @@ def main():
     get_parser = config_sub.add_parser("get", help="Get a config value")
     get_parser.add_argument("key", help="Config key")
 
+    # ── gui ─────────────────────────────────────────────
+    gui_parser = subparsers.add_parser("gui", help="Launch local WebGUI dashboard")
+    gui_parser.add_argument("--port", type=int, default=8420, help="Server port (default: 8420)")
+    gui_parser.add_argument("--no-browser", action="store_true", help="Don't auto-open browser")
+
     args = parser.parse_args()
 
     if not args.command:
@@ -97,6 +102,9 @@ def main():
     elif args.command == "config":
         from priority_living.config_manager import handle_config
         handle_config(args)
+    elif args.command == "gui":
+        from priority_living.gui import handle_gui
+        handle_gui(args, "https://thwyuilswskxejzjwkyr.supabase.co", "sb_publishable_xDyzIQsSNLeAF7DfJ_zddQ_vMmI-SZj")
     else:
         parser.print_help()
 
